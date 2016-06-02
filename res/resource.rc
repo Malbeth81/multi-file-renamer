@@ -1,0 +1,40 @@
+/*
+* Resource.rc - A collection of resources (Menu, Icons, Dialogs).
+*
+* Copyright (C) 2007-2008 Marc-André Lamothe.
+*
+* This program is free software; you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation; either version 2 of the License, or
+* (at your option) any later version.
+*
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+* GNU Library General Public License for more details.
+*
+* You should have received a copy of the GNU General Public License
+* along with this program; if not, write to the Free Software
+* Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+*/
+#include "../src/resource.h"
+#include <windows.h>
+
+1                   24            "res/theme.manifest"
+
+STRINGTABLE
+BEGIN
+    /* LIST VIEW COLUMN HEADERS STRING */
+    IDS_FILELIST_COL1             "File name"
+    IDS_FILELIST_COL2             "New file name"
+END
+
+IDD_MAIN DIALOGEX 0,0,300,229
+STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_SYSMENU | WS_CAPTION
+CAPTION "Multiple File Rename"
+FONT 8,"MS Shell Dlg 2",400,0,1
+BEGIN
+    CONTROL         "",IDC_FILELIST,WC_LISTVIEW,WS_TABSTOP | WS_BORDER | LVS_SINGLESEL | LVS_REPORT,7,16,236,130
+    DEFPUSHBUTTON     "O&K",IDOK,188,207,50,15
+    PUSHBUTTON        "&Cancel",IDCANCEL,243,207,50,15
+END
